@@ -4,9 +4,9 @@ tmp_dir = "tmp"
 
 [build]
 # Just plain old shell command. You could use `make` as well.
-cmd = "go build -o ./tmp/main.exe ./cmd/grind"
+cmd = "go build -o ./tmp/main ./cmd/grind"
 # Binary file yields from `cmd`.
-bin = "tmp\\main.exe"
+bin = "tmp/main"
 # Watch these filename extensions.
 include_ext = ["go", "tpl", "tmpl", "html"]
 # Ignore these filename extensions or directories.
