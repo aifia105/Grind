@@ -1,16 +1,12 @@
 package repository
 
 import (
-	"time"
-
 	"gorm.io/gorm"
 )
 
 type WorkoutSession struct {
 	gorm.Model
 	ProgramID uint          `json:"programId" validate:"required"`
-	StartTime time.Time     `json:"startTime" validate:"required"`
-	EndTime   time.Time     `json:"endTime" validate:"required"`
 	Duration  int           `json:"duration"`
 	Exercises []ExerciseSet `json:"exercises" validate:"required" gorm:"serializer:json"`
 	Notes     string        `json:"notes"`

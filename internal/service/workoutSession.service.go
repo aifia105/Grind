@@ -16,8 +16,6 @@ func NewWorkoutSessionService(db *gorm.DB) *WorkoutSessionService {
 func (s *WorkoutSessionService) CreateWorkoutSession(req *repository.WorkoutSession) (*repository.WorkoutSession, error) {
 	workoutSession := &repository.WorkoutSession{
 		ProgramID: req.ProgramID,
-		StartTime: req.StartTime,
-		EndTime:   req.EndTime,
 		Duration:  req.Duration,
 		Notes:     req.Notes,
 		Exercises: req.Exercises,
@@ -53,8 +51,6 @@ func (s *WorkoutSessionService) UpdateWorkoutSession(id string, req *repository.
 		return nil, err
 	}
 	workoutSession.ProgramID = req.ProgramID
-	workoutSession.StartTime = req.StartTime
-	workoutSession.EndTime = req.EndTime
 	workoutSession.Duration = req.Duration
 	workoutSession.Notes = req.Notes
 	workoutSession.Exercises = req.Exercises
